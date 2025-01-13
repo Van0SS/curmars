@@ -27,6 +27,7 @@ interface Event {
   severity: "positive" | "negative";
 }
 
+// Styled components for the UI
 const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
@@ -639,12 +640,14 @@ function App() {
     }
   }, [gameLost]);
 
+  // Calculate the multiplier for a given resource type based on purchased upgrades
   const getMultiplier = (resourceType: keyof Resource) => {
     return upgrades
       .filter((u) => u.resourceType === resourceType && u.purchased)
       .reduce((mult, upgrade) => mult * upgrade.multiplier, 1);
   };
 
+  // Handle resource generation actions
   const handleAction = (type: keyof Resource) => {
     if (!gameStarted) {
       setGameStarted(true);
@@ -696,6 +699,7 @@ function App() {
     setCredits((prev) => prev + 2);
   };
 
+  // Handle upgrade purchases
   const purchaseUpgrade = (upgrade: Upgrade) => {
     if (!gameStarted) {
       setGameStarted(true);
