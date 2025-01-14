@@ -52,6 +52,8 @@ const ResourceCard = styled(motion.div)`
   padding: 1.5rem;
   border-radius: 10px;
   color: white;
+  width: 100%;
+  height: 200px; // Fixed height to prevent layout shifts
 `;
 
 const Button = styled(motion.button)`
@@ -63,6 +65,8 @@ const Button = styled(motion.button)`
   cursor: pointer;
   font-size: 1rem;
   margin: 0.5rem;
+  width: 150px; // Fixed width to maintain consistent size
+  height: 50px; // Fixed height to maintain consistent size
 
   &:hover {
     background: #ff4081;
@@ -115,6 +119,8 @@ const UpgradeCard = styled(motion.div)`
   padding: 1rem;
   border-radius: 10px;
   cursor: pointer;
+  width: 100%;
+  height: 150px; // Fixed height to prevent layout shifts
 
   &:hover {
     background: #4a4a4a;
